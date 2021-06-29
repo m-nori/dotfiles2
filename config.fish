@@ -10,15 +10,13 @@ set -x PATH $HOME/Tools $PATH
 # 環境変数
 #-----------------------------------------------------------------
 export LSCOLORS=xbfxcxdxbxegedabagacad
-set -x LANG ja_JP.UTF-8
+set -x LANG C.UTF-8
 
 #-----------------------------------------------------------------
 # エイリアス設定
 #-----------------------------------------------------------------
-alias ls='ls -G'
 alias ll='ls -tlr'
 alias which='type -path'
-alias nvim='reattach-to-user-namespace -l nvim'
 alias vi='nvim'
 alias reload='. ~/.config/fish/config.fish'
 
@@ -26,9 +24,7 @@ alias reload='. ~/.config/fish/config.fish'
 # fish設定
 #-----------------------------------------------------------------
 # プロンプト
-#omf theme bobthefish
-omf theme shellder
-set -g theme_color_scheme base16-light
+omf theme bobthefish
 
 # 移動履歴
 function _peco_change_directory
@@ -62,18 +58,3 @@ function fish_user_key_bindings
   bind \cr peco_select_history # Bind for prco history to Ctrl+r
 end
 
-# pyenv
-set PYENV_SHELL fish
-# . '/usr/local/Cellar/pyenv/1.0.10_1/libexec/../completions/pyenv.fish'
-command pyenv rehash 2>/dev/null
-function pyenv
-  set command $argv[1]
-  set -e argv[1]
-
-  switch "$command"
-  case rehash shell
-    . (pyenv "sh-$command" $argv|psub)
-  case '*'
-    command pyenv "$command" $argv
-  end
-end

@@ -14,8 +14,8 @@ cnoremap <C-n> <Down>
 cnoremap <Down>  <C-n>
 
 if has('nvim')
-  source ~/dotfiles/.vimrc.completion.deoplete
+  source ~/dotfiles2/.vimrc.completion.deoplete
 else
-  source ~/dotfiles/.vimrc.completion.neocomplcache
+  source ~/dotfiles2/.vimrc.completion.neocomplcache
 endif
 
