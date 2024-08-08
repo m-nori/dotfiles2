@@ -2,6 +2,7 @@
 # PATH
 #-----------------------------------------------------------------
 set -x PATH /usr/local/bin $PATH
+set -x PATH /opt/homebrew/bin $PATH
 set -x PATH $HOME/.pyenv/shims $PATH
 set -x PATH $HOME/.nodebrew/current/bin $PATH
 set -x PATH $HOME/Tools $PATH
@@ -10,7 +11,8 @@ set -x PATH $HOME/Tools $PATH
 # 環境変数
 #-----------------------------------------------------------------
 export LSCOLORS=xbfxcxdxbxegedabagacad
-set -x LANG C.UTF-8
+#set -x LANG C.UTF-8
+set LANG ja_JP.UTF-8
 
 #-----------------------------------------------------------------
 # エイリアス設定
